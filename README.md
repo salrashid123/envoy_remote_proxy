@@ -209,7 +209,7 @@ terraform apply
 
 The output will show the Regional LB ranges allocated.  For example:
 
-```json
+```
 allowedIP = tolist([
   "72.83.22.111/32",
 ])
