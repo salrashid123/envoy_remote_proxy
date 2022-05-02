@@ -1,0 +1,20 @@
+# my global config
+global:
+  scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  # scrape_timeout is set to the global default (10s).
+
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+      # - alertmanager:9093
+
+
+scrape_configs:
+  - job_name: 'envoy'
+    metrics_path: '/stats/prometheus'
+    static_configs:
+    # - targets: ['35.202.89.73:9000', '34.148.151.53:9000']
+    # - targets: ['35.202.212.160:9000', '34.74.158.204:9000']
+    - targets: ['127.0.0.1:9000']

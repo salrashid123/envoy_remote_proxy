@@ -1,0 +1,175 @@
+#cloud-config
+
+users:
+- name: cloudservice
+  uid: 2000
+
+write_files:
+- path: /home/cloudservice/config/certs/server.crt
+  permissions: 0644
+  owner: root
+  append: true
+  content: |
+    -----BEGIN CERTIFICATE-----
+    MIIEKjCCAxKgAwIBAgIBCjANBgkqhkiG9w0BAQsFADBXMQswCQYDVQQGEwJVUzEP
+    MA0GA1UECgwGR29vZ2xlMRMwEQYDVQQLDApFbnRlcnByaXNlMSIwIAYDVQQDDBlF
+    bnRlcnByaXNlIFN1Ym9yZGluYXRlIENBMB4XDTIyMDUwMTIxMjE0NFoXDTI0MDgw
+    ODIxMjE0NFowSTELMAkGA1UEBhMCVVMxDzANBgNVBAoMBkdvb2dsZTETMBEGA1UE
+    CwwKRW50ZXJwcmlzZTEUMBIGA1UEAwwLaHR0cGJpbi5vcmcwggEiMA0GCSqGSIb3
+    DQEBAQUAA4IBDwAwggEKAoIBAQDFyGis/SnKF3lAT/1mTVO75srxBzzc6KUZjo0K
+    A+WDmL3fFi68YfvDL7GCRx38puGbVTnw0DsHijDPoO2JV4crCRV+IGenbv1TNioX
+    egZr6RveHiwDLxs+Y0tG/T1uC92Vuc4xwVcilmPHrng7kIWPvO6Bi0D2tPRdvhtt
+    Uv3YFaCO9YFFr6Swb3dzx+O8RgvdbUHNi/mDo4vghl4p9kRgjshualvB3DG4NpK9
+    AB2B5/dhH9qWVj0UuyFoUrjSaZt67/ImTmQX9Xo4VIEaTEttruzJG95OpcAkggGh
+    vKGcONKvbVgJGuqO4QmKX8AkuCH296v/WTD04SS+5Z4LE2b9AgMBAAGjggENMIIB
+    CTAOBgNVHQ8BAf8EBAMCB4AwCQYDVR0TBAIwADATBgNVHSUEDDAKBggrBgEFBQcD
+    ATAdBgNVHQ4EFgQUWeJPqVQLfQ+cyIVvF/ZcVLh+UwcwHwYDVR0jBBgwFoAUt7qw
+    AqHnvjTGwQVcZnjlu1NdoVQwRAYIKwYBBQUHAQEEODA2MDQGCCsGAQUFBzAChiho
+    dHRwOi8vcGtpLmVzb2RlbW9hcHAyLmNvbS9jYS90bHMtY2EuY2VyMDkGA1UdHwQy
+    MDAwLqAsoCqGKGh0dHA6Ly9wa2kuZXNvZGVtb2FwcDIuY29tL2NhL3Rscy1jYS5j
+    cmwwFgYDVR0RBA8wDYILaHR0cGJpbi5vcmcwDQYJKoZIhvcNAQELBQADggEBALlu
+    /GXCSPbmAuFkaJs60R6cb+mkqHDvhRC5xWrFKs2VZ7ic2XJteAekz0WlR0rTdmKc
+    92c4QwxFAIYEDVJSzRz2kXESl+Rd2xCKj7t0W9pbS5W9cnD5qQPg9K8UgCVbgsQO
+    WNzy1o/mjHCpOccX+/BwQqzK34QIC8BEWhLEg1mziVGI+O3HTBts5279Kz6gRcZx
+    54FHCjK8DUpb02EtBv1gQ7301S2RNXpmN6HShhvivzS6G23YMlYG8BPmi7u6pKc6
+    BmU/Mk85+ZInAGo6l1uf1eZRzcNQRhXptt+QCkTgvVUFZFa/OsuiJt18SlTV/xap
+    eDMa3TMaEpUWJsC4Z2w=
+    -----END CERTIFICATE-----
+
+- path: /home/cloudservice/config/certs/server.key
+  permissions: 0644
+  owner: root
+  append: true
+  content: |
+    -----BEGIN PRIVATE KEY-----
+    MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDFyGis/SnKF3lA
+    T/1mTVO75srxBzzc6KUZjo0KA+WDmL3fFi68YfvDL7GCRx38puGbVTnw0DsHijDP
+    oO2JV4crCRV+IGenbv1TNioXegZr6RveHiwDLxs+Y0tG/T1uC92Vuc4xwVcilmPH
+    rng7kIWPvO6Bi0D2tPRdvhttUv3YFaCO9YFFr6Swb3dzx+O8RgvdbUHNi/mDo4vg
+    hl4p9kRgjshualvB3DG4NpK9AB2B5/dhH9qWVj0UuyFoUrjSaZt67/ImTmQX9Xo4
+    VIEaTEttruzJG95OpcAkggGhvKGcONKvbVgJGuqO4QmKX8AkuCH296v/WTD04SS+
+    5Z4LE2b9AgMBAAECggEAJIaBRkkumYLCQq1DB8yKBS53FhIXHFjefJzF0S6tCSOB
+    FRzcnq+dtgstxfhqQklzaqNPovhhnl/X6dA3beC7NqhjzrofSl2F7QMYvOMtImqX
+    WerKiAAAEQJ3WXHVEWihkFATEz84X0vUu4Ct9ZoYAFaM2WGlKqp6YoGEQSlNdcUd
+    df18HprkjalM6TM+MirXLrfpOfKJToLhSTkNFu/xJHuYTGTUW9gElK+IkkMDMrLG
+    bDwaridJ0XGh4SJ5pG4W4+xEe4XrGjKJLLXL0QzywJRcr9se4iY3hbUhEgqbArIh
+    DjmHqMwDkcHOT3yRx2PQM59WKWsk9tGUrAWEc9bQxQKBgQDuKcjgJm+2nPa4L16e
+    Ta+DMLPtajb8uzliZgUS7FdcN5P4wDYNKeTtRiIOCKBH8J+PJUk9WUXqWv9kL5Np
+    LplGgOF/F5vls15Jh83cg2HvKscO0z3+p+sCSCtmJK6rbZDkkk6+x5jciki6kIxM
+    RblhJRr5eLczXh0ZWFEVTwuDBwKBgQDUmG0ebF5tcLujW4F14c0OR1drUc1bWfow
+    VFx7sx5CkzA5YEyzQwiU6cv7xbTazFFqTnDVaYaFF/R7h3d7/0efB2Zeau6CXfTi
+    fHjXQFM2xOxd4bv5DIJ8H2AsNJMBWBF2LPiR+Qcc5HqGfj0Zo3C6Rk/6qJ4BhiEE
+    cz8B588w2wKBgFq5NhkU6zdQIbfV66A4DaTW96N384xgsaJnJIWp3Dl3vnlilvR6
+    wgcU0UIxTQU6hz2bQYQKLtTwZxs9+FR3+NFfpQap8qwUoNU301auAa9+xydBlvsb
+    8i0DWuzlClipOymnBjIsjHFuh/fxulAPu2djIBxqPLdnoYQXHYQVgVgfAoGAKE/a
+    6Rjtct0ch2ZTjxHI+zsl5XC2eur92Oo2OzKEu2UDkO2kvZ0pZGtMxaoAmDiD+59y
+    H9WJr3USY9YVHwsR/qK9k4u9PDUquUOW+mH1JX6Dv22NYjUwDO86Ike51FhpvznZ
+    zHwnECB250fKuDDYsEmi4snUZD+VxS1BNlBJZl8CgYEAzaT3rJuTDrpB9EfFN/jd
+    GYFGhICVONtIkkZBkTV2qE3JuDvgse4H/zm0rK3ZxN1nUP2DaiKAnv5Vs/2IANEa
+    8sU+9ZN//+ylvkPTjn/l6UlZ1whjmgOOjznuc3WhmtW1phbL4tOnwGurZx7eZ6Hn
+    w/y+9gZznhLqvARQemP5zIM=
+    -----END PRIVATE KEY-----
+
+- path: /home/cloudservice/config/tls.yaml
+  permissions: 0644
+  owner: root
+  append: true
+  content: |
+    admin:
+      access_log_path: /dev/null
+      address:
+        socket_address:
+          address: 0.0.0.0
+          port_value: 9000
+
+    node:
+        cluster: service_greeter
+        id: test-id
+
+    static_resources:
+      listeners:
+      - name: listener_0
+        address:
+          socket_address: { address: 0.0.0.0, port_value: 8081 }
+        filter_chains:
+        - filters:
+          - name: envoy.filters.network.http_connection_manager
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+              stat_prefix: ingress_http
+              codec_type: AUTO
+              access_log:
+              - name:  envoy.access_loggers.file
+                typed_config:
+                  "@type": type.googleapis.com/envoy.extensions.access_loggers.file.v3.FileAccessLog
+                  path: "/dev/stdout"             
+              route_config:
+                name: local_route
+                virtual_hosts:
+                - name: local_service
+                  domains: ["*"]
+                  routes:
+                  - match:
+                      prefix: "/"
+                    route: 
+                      cluster: service_http
+                      host_rewrite_literal: "httpbin.org"
+              http_filters:
+              - name: envoy.filters.http.router
+          transport_socket:
+            name: envoy.transport_sockets.tls
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.DownstreamTlsContext
+              common_tls_context:
+                tls_certificate_sds_secret_configs:
+                - name: server_cert                              
+      clusters:
+      - name: service_http
+        connect_timeout: 2s
+        type: LOGICAL_DNS
+        dns_lookup_family: V4_ONLY
+        lb_policy: ROUND_ROBIN
+        load_assignment:
+          cluster_name: service_http
+          endpoints:
+          - lb_endpoints:
+            - endpoint:
+                address:
+                  socket_address:
+                    address: ${allowed_host}
+                    port_value: 443
+        transport_socket:
+          name: envoy.transport_sockets.tls
+          typed_config:
+            "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.UpstreamTlsContext
+
+      secrets:
+      - name: server_cert
+        tls_certificate:
+          certificate_chain:
+            filename: /certs/server.crt
+          private_key:
+            filename: /certs/server.key
+
+
+- path: /etc/systemd/system/cloudservice.service
+  permissions: 0644
+  owner: root
+  content: |
+    [Unit]
+    Description=Start a simple docker container
+
+    [Service]
+    Environment="HOME=/home/cloudservice"
+
+    ExecStart=/usr/bin/docker run --rm -u 0 -p 443:8081 -p 9000:9000 -v /home/cloudservice/config/certs:/certs -v /home/cloudservice/config/tls.yaml:/config/tls.yaml --name=mycloudservice docker.io/envoyproxy/envoy:v1.21-latest -c /config/tls.yaml
+    ExecStop=/usr/bin/docker stop mycloudservice
+    ExecStopPost=/usr/bin/docker rm mycloudservice
+
+bootcmd:
+- iptables -D INPUT -p tcp -m tcp --dport 22 -j ACCEPT
+- systemctl mask --now serial-getty@ttyS0.service
+
+runcmd:
+- systemctl daemon-reload
+- systemctl start cloudservice.service
